@@ -1,5 +1,5 @@
 /** @format */
 
 export default {
-  defaultField: state => state.defaultField
-}
+  defaultField: state => state.defaultField,
+};

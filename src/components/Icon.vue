@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import Icons from '@assets/icons'
+import Icons from '@assets/icons';
 
 export default {
   data() {
-    return {}
+    return {};
   },
 
   props: {
@@ -20,17 +20,17 @@ export default {
       required: true,
       default: '',
       validator(val) {
-        return Icons[val]
-      }
-    }
+        return Icons[val];
+      },
+    },
   },
 
   computed: {
     iconClass() {
-      return 'icon-' + this.name
-    }
-  }
-}
+      return `icon-${this.name}`;
+    },
+  },
+};
 </script>
 
 <style lang="scss">

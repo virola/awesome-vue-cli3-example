@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import Advertisement from '@components/Advertisement'
+import Advertisement from '@components/Advertisement';
 
 export default {
   data() {
@@ -163,18 +163,18 @@ vue ui
 - --target 允许你将项目中的任何组件以一个库或 Web Components 组件的方式进行构建。更多细节请查阅[构建目标](https://cli.vuejs.org/zh/guide/build-targets.html)。
 
 - --report 和 --report-json 会根据构建统计生成报告，它会帮助你分析包中包含的模块们的大小。
-      `
-    }
+      `,
+    };
   },
 
   methods: {
-    onHandleChange() {}
+    onHandleChange() {},
   },
 
   components: {
-    Advertisement
-  }
-}
+    Advertisement,
+  },
+};
 </script>
 
 <style lang="scss">

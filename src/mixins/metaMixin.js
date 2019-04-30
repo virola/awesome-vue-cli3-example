@@ -2,27 +2,26 @@
 
 export default {
   data() {
-    const vm = this
+    const vm = this;
     return {
       title: '首页',
       siteTitle: 'Vue-Cli3 实践参考',
-      titleTemplate: '%s - ' + vm.siteTitle,
+      titleTemplate: `%s - ${vm.siteTitle}`,
       keywords:
         'vue,vue-cli3,webpack,vuex,vue-router,element-ui,TypeScript,ESLint,Prettier,Dayjs,Markdown,Jest,PWA,开箱即用,脚手架,模板',
       description:
-        '此为基于 Vue-Cli3 搭建的开箱即用 Vue 脚手架模版，致力于探究更高效地构建优质 Web 应用。'
-    }
+        '此为基于 Vue-Cli3 搭建的开箱即用 Vue 脚手架模版，致力于探究更高效地构建优质 Web 应用。',
+    };
   },
 
   created() {},
 
   metaInfo() {
-    const titleContent = this.title ? `${this.title} - ${this.siteTitle}` : `${this.siteTitle}`
+    const titleContent = this.title ? `${this.title} - ${this.siteTitle}` : `${this.siteTitle}`;
     return {
       title: this.title,
-      titleTemplate: titleChunk => {
-        return titleChunk ? `${titleChunk} - ${this.siteTitle}` : `${this.siteTitle}`
-      },
+      titleTemplate: titleChunk =>
+        titleChunk ? `${titleChunk} - ${this.siteTitle}` : `${this.siteTitle}`,
       meta: [
         { vmid: 'title', name: 'title', content: titleContent },
         { vmid: 'keywords', name: 'keywords', content: this.keywords },
@@ -32,23 +31,23 @@ export default {
         {
           vmid: 'og:image',
           property: 'og:image',
-          content: 'https://nice.lovejade.cn/logo.png'
+          content: 'https://nice.lovejade.cn/logo.png',
         },
         {
           vmid: 'og:keywords',
           property: 'og:keywords',
-          content: this.keywords
+          content: this.keywords,
         },
         {
           vmid: 'og:description',
           property: 'og:description',
-          content: this.description
-        }
-      ]
-    }
+          content: this.description,
+        },
+      ],
+    };
   },
 
   mounted() {},
 
-  methods: {}
-}
+  methods: {},
+};

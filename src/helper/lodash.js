@@ -10,7 +10,7 @@
  * @detail:
  */
 
-import _ from 'lodash'
+import _ from 'lodash';
 
 export default {
   clone: _.clone,
@@ -21,5 +21,5 @@ export default {
   find: _.find,
   isEmpty: _.isEmpty,
   flatten: _.flatten,
-  flattenDepth: _.flattenDepth
-}
+  flattenDepth: _.flattenDepth,
+};

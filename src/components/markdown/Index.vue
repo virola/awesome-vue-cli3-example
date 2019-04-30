@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import MarkdownPreview from './MarkdownPreview'
+import MarkdownPreview from './MarkdownPreview';
 
 export default {
   name: 'Markdown',
@@ -32,56 +32,56 @@ export default {
   data() {
     return {
       activeName: 'write',
-      originalVal: ''
-    }
+      originalVal: '',
+    };
   },
 
   props: {
     value: {
       type: String,
-      default: ''
+      default: '',
     },
     placeholder: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   watch: {
     value(val) {
-      this.originalVal = val
-    }
+      this.originalVal = val;
+    },
   },
 
   components: {
-    MarkdownPreview
+    MarkdownPreview,
   },
 
   created() {},
 
   mounted() {
-    this.originalVal = this.value
+    this.originalVal = this.value;
   },
 
   methods: {
     onChangeEvent(value) {
-      this.$emit('input', value)
+      this.$emit('input', value);
     },
 
-    onHandleClick() {}
+    onHandleClick() {},
   },
 
   locales: {
     en: {
       write: 'Write',
-      preview: 'Preview'
+      preview: 'Preview',
     },
     zh: {
       write: '编写',
-      preview: '预览'
-    }
-  }
-}
+      preview: '预览',
+    },
+  },
+};
 </script>
 
 <style lang="scss">

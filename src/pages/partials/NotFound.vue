@@ -23,13 +23,13 @@ export default {
 
   methods: {
     onBackPageClick() {
-      this.$router.go(-1)
+      this.$router.go(-1);
     },
     onGoHomeClick() {
-      this.$router.push('/')
-    }
-  }
-}
+      this.$router.push('/');
+    },
+  },
+};
 </script>
 
 <style type="text/css" lang="scss">

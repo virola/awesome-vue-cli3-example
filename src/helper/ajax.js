@@ -1,57 +1,62 @@
 /** @format */
 
-import axios from 'axios'
-import $q from 'q'
-import { $utils } from '@helper'
+import axios from 'axios';
+import $q from 'q';
 
 function requestHandle(params) {
-  const defer = $q.defer()
+  const defer = $q.defer();
   axios(params)
     .then(res => {
       if (res && (res.unauthorized || res.statusCode === 401)) {
-        window.location.href = '/login'
+        window.location.href = '/login';
       }
       if (res.type === 'application/x-msdownload') {
-        redirectToIframe(res.request.responseURL)
+        redirectToIframe(res.request.responseURL);
       } else if (res.data) {
+        // 成功返回data，失败抛出msg
         if (res.data.success) {
-          defer.resolve(res.data.value)
+          defer.resolve(res.data.data);
         } else {
-          defer.reject(res.data.message)
+          defer.reject(res.data.msg);
         }
       } else {
-        defer.reject()
+        defer.reject();
       }
     })
     .catch(err => {
-      defer.reject(err)
-    })
+      defer.reject(err);
+    });
 
-  return defer.promise
+  return defer.promise;
 }
 
+/**
+ * 通过iframe方式下载
+ * @param {*} url 下载地址
+ */
 function redirectToIframe(url) {
-  const iframe = document.createElement('iframe')
-  iframe.style.display = 'none'
-  iframe.src = url
+  const iframe = document.createElement('iframe');
+  iframe.style.display = 'none';
+  iframe.src = url;
   iframe.onload = function() {
-    document.body.removeChild(iframe)
-  }
-  document.body.appendChild(iframe)
+    document.body.removeChild(iframe);
+  };
+  document.body.appendChild(iframe);
 }
 
 export default {
-  post: function(url, params) {
+  post(url, params) {
     return requestHandle({
       method: 'post',
-      url: url,
-      data: params
-    })
+      url,
+      data: params,
+    });
   },
-  get: function(url, params) {
+  get(url, params) {
     return requestHandle({
       method: 'get',
-      url: $utils.queryString(url, params)
-    })
-  }
-}
+      url,
+      params,
+    });
+  },
+};

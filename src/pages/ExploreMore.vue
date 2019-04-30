@@ -73,8 +73,8 @@
 </template>
 
 <script>
-import EditDialog from '@components/EditDialog'
-import metaMixin from '@mixins/metaMixin.js'
+import EditDialog from '@components/EditDialog';
+import metaMixin from '@mixins/metaMixin.js';
 
 export default {
   name: 'ExploreMore',
@@ -93,52 +93,52 @@ export default {
           address: 'https://nicelinks.site/',
           description:
             '倾城之链，作为一个开放平台，旨在云集全球优秀网站，探索互联网中更广阔的世界；在这里，你可以轻松发现、学习、分享更多有用或有趣的事物。',
-          date: '2017-09-20'
+          date: '2017-09-20',
         },
         {
           name: '晚晴幽草轩',
           address: 'https://jeffjade.com',
           description:
             '个人博客：专注web前端开发和效率工具；也记载关于音乐/电影/旅行等轶事，同时记录下经验总结和人生思考；',
-          date: '2014-09-20'
+          date: '2014-09-20',
         },
         {
           name: '静晴轩别苑',
           address: 'https://nice.lovejade.cn/',
           description:
             '繁华尽处，寻一无人山谷，建一木制小屋，铺一青石小路，与你晨钟暮鼓，安之若素。',
-          date: '2018-05-26'
+          date: '2018-05-26',
         },
         {
           name: '吾意静晴轩',
           address: 'https://docz.lovejade.cn/',
           description:
             '吾意静晴轩的诞生，是为了体验采用 Docz 构建 Web 应用程序；同时，为便捷而优雅的创建 Web 应用提供些参考。',
-          date: '2018-08-20'
+          date: '2018-08-20',
         },
         {
           name: '天意人间舫',
           address: 'https://blog.lovejade.cn/',
           description: '辅助主博客——<a href="https://jeffjade.com">晚晴幽草轩</a>の华丽存在',
-          date: '2016-01-20'
+          date: '2016-01-20',
         },
         {
           name: 'Vue-Cli3 实践',
           address: 'https://vue-cli3.lovejade.cn/',
           description:
             'Awesome example for rapid Vue.js development using vue-cli3. (vue webpack vuex vue-router vue-i18n element-ui) out of the box.',
-          date: '2018-06-01'
-        }
+          date: '2018-06-01',
+        },
       ],
       isDialogVisible: false,
       currentPage: 1,
       currentRowData: {},
-      currentRowIndex: -1
-    }
+      currentRowIndex: -1,
+    };
   },
 
   components: {
-    EditDialog
+    EditDialog,
   },
 
   computed: {},
@@ -153,24 +153,24 @@ export default {
 
   methods: {
     handleSizeChange(val) {
-      console.log(`每页 ${val} 条`)
+      console.log(`每页 ${val} 条`);
     },
     handleCurrentChange(val) {
-      this.currentPage = val
-      console.log(`当前页: ${val}`)
+      this.currentPage = val;
+      console.log(`当前页: ${val}`);
     },
     onUpdateRowData(data) {
-      this.currentRowData = data
-      this.$set(this.tableData, this.currentRowIndex, data)
+      this.currentRowData = data;
+      this.$set(this.tableData, this.currentRowIndex, data);
     },
     /* ----------------------------On Click Event---------------------------- */
     onEditClick(rowData, index) {
-      this.currentRowData = rowData
-      this.currentRowIndex = index
-      this.isDialogVisible = true
-    }
-  }
-}
+      this.currentRowData = rowData;
+      this.currentRowIndex = index;
+      this.isDialogVisible = true;
+    },
+  },
+};
 </script>
 
 <style lang="scss">

@@ -5,27 +5,27 @@
  * @format
  */
 
-import NotFound from '@pages/partials/NotFound'
+import NotFound from '@pages/partials/NotFound';
 
 export default [
   {
     path: '/',
     meta: {
       title: 'Vue-cli Overall Example',
-      ignoreAuth: true
+      ignoreAuth: true,
     },
-    component: resolve => require(['@pages/Homepage'], resolve)
+    component: resolve => require(['@pages/Homepage'], resolve),
   },
   {
     path: '/',
-    redirect: '/homepage'
+    redirect: '/homepage',
   },
   {
     path: '*',
     meta: {
       title: 'Page Not Found',
-      ignoreAuth: true
+      ignoreAuth: true,
     },
-    component: NotFound
-  }
-]
+    component: NotFound,
+  },
+];

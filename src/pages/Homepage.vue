@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import Instruction from '@components/Instruction'
-import metaMixin from '@mixins/metaMixin.js'
+import Instruction from '@components/Instruction';
+import metaMixin from '@mixins/metaMixin.js';
 
 export default {
   name: 'homepage',
@@ -42,14 +42,14 @@ export default {
   data() {
     return {
       isBigScreenFlag: window.innerWidth > 768,
-      titleText: 'Awesome Vue-Cli3 ExamplE'
-    }
+      titleText: 'Awesome Vue-Cli3 ExamplE',
+    };
   },
 
   components: {
-    Instruction
-  }
-}
+    Instruction,
+  },
+};
 </script>
 
 <style lang="scss">

@@ -5,29 +5,29 @@
 </template>
 
 <script>
-import marked from 'marked'
-import './markdown.css'
+import marked from 'marked';
+import './markdown.css';
 
 export default {
   name: 'PreviewMd',
 
   data() {
-    return {}
+    return {};
   },
 
   computed: {
     beParsedVal() {
       return marked(this.value, {
-        sanitize: true
-      })
-    }
+        sanitize: true,
+      });
+    },
   },
 
   props: {
     value: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   components: {},
@@ -36,6 +36,6 @@ export default {
 
   mounted() {},
 
-  methods: {}
-}
+  methods: {},
+};
 </script>

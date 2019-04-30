@@ -5,10 +5,10 @@
  * @format
  */
 
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 export default {
   checkSession() {
-    return Cookies.get('isLogin')
-  }
-}
+    return Cookies.get('isLogin');
+  },
+};

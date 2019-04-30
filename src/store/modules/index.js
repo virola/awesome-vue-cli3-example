@@ -1,14 +1,14 @@
 /** @format */
 
-const files = require.context('.', true, /index.js$/)
-const modules = {}
+const files = require.context('.', true, /index.js$/);
+const modules = {};
 
 files.keys().forEach(key => {
   if (key === './index.js') {
-    return
+    return;
   }
-  const moduleName = key.split('/')[1]
-  modules[moduleName] = files(key).default
-})
+  const moduleName = key.split('/')[1];
+  modules[moduleName] = files(key).default;
+});
 
-export default modules
+export default modules;

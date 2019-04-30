@@ -41,6 +41,8 @@
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
@@ -71,6 +73,9 @@
       "es6": true
     },
     "rules": {
+      "no-under": 0,
+      "eqeqeq": 0,
+      "linebreak-style": 0,
       "no-console": 0,
       "no-useless-escape": 0,
       "no-multiple-empty-lines": [
@@ -83,8 +88,8 @@
         "error",
         {
           "singleQuote": true,
-          "semi": false,
-          "trailingComma": "none",
+          "semi": true,
+          "trailingComma": "all",
           "bracketSpacing": true,
           "jsxBracketSameLine": true,
           "insertPragma": true,
@@ -94,9 +99,9 @@
     },
     "plugins": [],
     "extends": [
+      "airbnb-base",
       "plugin:vue/essential",
-      "plugin:prettier/recommended",
-      "eslint:recommended"
+      "plugin:prettier/recommended"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
@@ -104,7 +109,7 @@
   },
   "prettier": {
     "singleQuote": true,
-    "semi": false,
+    "semi": true,
     "printWidth": 100,
     "proseWrap": "never"
   },

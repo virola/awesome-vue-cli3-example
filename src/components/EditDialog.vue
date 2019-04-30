@@ -46,10 +46,10 @@ export default {
         name: '',
         description: '',
         address: '',
-        date: ''
+        date: '',
       },
-      rules: {}
-    }
+      rules: {},
+    };
   },
 
   computed: {},
@@ -61,36 +61,36 @@ export default {
   props: {
     value: {
       type: Boolean,
-      required: true
+      required: true,
     },
     pdata: {
       type: Object,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
 
   watch: {
     value(newVal) {
-      this.isVisible = newVal
-      this.fillForm = JSON.parse(JSON.stringify(this.pdata))
-    }
+      this.isVisible = newVal;
+      this.fillForm = JSON.parse(JSON.stringify(this.pdata));
+    },
   },
 
   methods: {
     onClose() {
-      this.isVisible = false
-      this.$emit('input', this.isVisible)
+      this.isVisible = false;
+      this.$emit('input', this.isVisible);
     },
     /* ----------------------------On Click Event---------------------------- */
     onSureClick() {
       this.$refs.fillForm.validate(valid => {
-        if (!valid) return
-        this.$emit('dispatch-data', JSON.parse(JSON.stringify(this.fillForm)))
-        this.isVisible = false
-      })
-    }
-  }
-}
+        if (!valid) return;
+        this.$emit('dispatch-data', JSON.parse(JSON.stringify(this.fillForm)));
+        this.isVisible = false;
+      });
+    },
+  },
+};
 </script>
 
 <style type="text/css" lang="scss">
